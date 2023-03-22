@@ -37,12 +37,16 @@ def split(wineDataDictionary):
 
         if wineDataDictionary[wine]["type"]=="white":
              diccionarioWhiteRes["dato"+str(whiteWineCount)] = {"fixed acidity":wineDataDictionary[wine]["fixed acidity"],"volatile acidity":wineDataDictionary[wine]["volatile acidity"],"citric acid":wineDataDictionary[wine]["citric acid"],"residual sugar":wineDataDictionary[wine]["residual sugar"],"chlorides":wineDataDictionary[wine]["chlorides"],"free sulfur dioxide":wineDataDictionary[wine]["free sulfur dioxide"],"total sulfur dioxide":wineDataDictionary[wine]["total sulfur dioxide"],"density":wineDataDictionary[wine]["density"],"PH":wineDataDictionary[wine]["PH"],"sulphates":wineDataDictionary[wine]["sulphates"],"alcohol":wineDataDictionary[wine]["alcohol"],"quality":wineDataDictionary[wine]["quality"]}
+             whiteWineCount+=1
 
         elif wineDataDictionary[wine]["type"]=="red":
             diccionarioRedRes["dato"+str(redWineCount)] = {"fixed acidity":wineDataDictionary[wine]["fixed acidity"],"volatile acidity":wineDataDictionary[wine]["volatile acidity"],"citric acid":wineDataDictionary[wine]["citric acid"],"residual sugar":wineDataDictionary[wine]["residual sugar"],"chlorides":wineDataDictionary[wine]["chlorides"],"free sulfur dioxide":wineDataDictionary[wine]["free sulfur dioxide"],"total sulfur dioxide":wineDataDictionary[wine]["total sulfur dioxide"],"density":wineDataDictionary[wine]["density"],"PH":wineDataDictionary[wine]["PH"],"sulphates":wineDataDictionary[wine]["sulphates"],"alcohol":wineDataDictionary[wine]["alcohol"],"quality":wineDataDictionary[wine]["quality"]}
-
-
-
-
+            redWineCount+=1
 
     return diccionarioWhiteRes, diccionarioRedRes
+
+def reduce(wineDataDictionary, dataTypeWanted):
+    wantedAttributeListRes = []
+
+    for wine in wineDataDictionary:
+        wantedAttributeListRes.append(wineDataDictionary[wine][dataTypeWanted])
