@@ -33,8 +33,7 @@ def split(wineDataDictionary):
     redWineCount=1
 
     for wine in wineDataDictionary:
-        print(wine)
-
+        
         if wineDataDictionary[wine]["type"]=="white":
              diccionarioWhiteRes["dato"+str(whiteWineCount)] = {"fixed acidity":wineDataDictionary[wine]["fixed acidity"],"volatile acidity":wineDataDictionary[wine]["volatile acidity"],"citric acid":wineDataDictionary[wine]["citric acid"],"residual sugar":wineDataDictionary[wine]["residual sugar"],"chlorides":wineDataDictionary[wine]["chlorides"],"free sulfur dioxide":wineDataDictionary[wine]["free sulfur dioxide"],"total sulfur dioxide":wineDataDictionary[wine]["total sulfur dioxide"],"density":wineDataDictionary[wine]["density"],"PH":wineDataDictionary[wine]["PH"],"sulphates":wineDataDictionary[wine]["sulphates"],"alcohol":wineDataDictionary[wine]["alcohol"],"quality":wineDataDictionary[wine]["quality"]}
              whiteWineCount+=1
@@ -49,4 +48,13 @@ def reduce(wineDataDictionary, dataTypeWanted):
     wantedAttributeListRes = []
 
     for wine in wineDataDictionary:
+        if dataTypeWanted in wineDataDictionary[wine]:
+            raise ValueError("Ha ocurrido la excepción ValueError")
+        
         wantedAttributeListRes.append(wineDataDictionary[wine][dataTypeWanted])
+
+    return wantedAttributeListRes
+
+def silhouette():
+
+    return
