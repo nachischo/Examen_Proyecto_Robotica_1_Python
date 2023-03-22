@@ -49,12 +49,17 @@ def reduce(wineDataDictionary, dataTypeWanted):
 
     for wine in wineDataDictionary:
         if dataTypeWanted in wineDataDictionary[wine]:
+            wantedAttributeListRes.append(wineDataDictionary[wine][dataTypeWanted])
+            
+        else:
             raise ValueError("Ha ocurrido la excepción ValueError")
-        
-        wantedAttributeListRes.append(wineDataDictionary[wine][dataTypeWanted])
 
     return wantedAttributeListRes
 
-def silhouette():
+def silhouette(primeraLista,segundaLista):
+    coefSilhouettePrimeraListaRes = 0
+    sDeCadaDatoDeLaLista = 0
+
+
 
     return
