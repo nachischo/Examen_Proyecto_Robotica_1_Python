@@ -28,11 +28,21 @@ def read_data(nombreFicheroCSV):
 
 def split(wineDataDictionary):
     diccionarioWhiteRes = {}
+    whiteWineCount = 1
     diccionarioRedRes = {}
+    redWineCount=1
 
     for wine in wineDataDictionary:
-        if wine["type"]=="white":
-            diccionarioWhiteRes[] = {}
+        print(wine)
+
+        if wineDataDictionary[wine]["type"]=="white":
+             diccionarioWhiteRes["dato"+str(whiteWineCount)] = {"fixed acidity":wineDataDictionary[wine]["fixed acidity"],"volatile acidity":wineDataDictionary[wine]["volatile acidity"],"citric acid":wineDataDictionary[wine]["citric acid"],"residual sugar":wineDataDictionary[wine]["residual sugar"],"chlorides":wineDataDictionary[wine]["chlorides"],"free sulfur dioxide":wineDataDictionary[wine]["free sulfur dioxide"],"total sulfur dioxide":wineDataDictionary[wine]["total sulfur dioxide"],"density":wineDataDictionary[wine]["density"],"PH":wineDataDictionary[wine]["PH"],"sulphates":wineDataDictionary[wine]["sulphates"],"alcohol":wineDataDictionary[wine]["alcohol"],"quality":wineDataDictionary[wine]["quality"]}
+
+        elif wineDataDictionary[wine]["type"]=="red":
+            diccionarioRedRes["dato"+str(redWineCount)] = {"fixed acidity":wineDataDictionary[wine]["fixed acidity"],"volatile acidity":wineDataDictionary[wine]["volatile acidity"],"citric acid":wineDataDictionary[wine]["citric acid"],"residual sugar":wineDataDictionary[wine]["residual sugar"],"chlorides":wineDataDictionary[wine]["chlorides"],"free sulfur dioxide":wineDataDictionary[wine]["free sulfur dioxide"],"total sulfur dioxide":wineDataDictionary[wine]["total sulfur dioxide"],"density":wineDataDictionary[wine]["density"],"PH":wineDataDictionary[wine]["PH"],"sulphates":wineDataDictionary[wine]["sulphates"],"alcohol":wineDataDictionary[wine]["alcohol"],"quality":wineDataDictionary[wine]["quality"]}
+
+
+
 
 
     return diccionarioWhiteRes, diccionarioRedRes
